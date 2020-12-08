@@ -2,3 +2,18 @@
     width: 100vw;
     min-height: 100vh;
 }
+
+#page-teacher-form .page-header .header-content {
+    margin-bottom: 3.4rem;
+}
+
+#page-teacher-form main {
+    background-color: var(--color-box--base);
+    width: 100%;
+    max-width: 74rem;
+    
+}
+
+fieldset {
+
+}
