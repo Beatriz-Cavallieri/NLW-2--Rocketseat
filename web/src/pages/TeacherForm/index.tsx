@@ -1,6 +1,10 @@
 import React from "react";
+import Input from "../../components/Input";
 import PageHeader from "../../components/PageHeader";
+import warningIcon from "../../assets/images/icons/warning.svg";
 import "./styles.css";
+import Textarea from "../../components/Textarea";
+import Select from "../../components/Select";
 
 export default function TeacherForm() {
   return (
@@ -13,21 +17,37 @@ export default function TeacherForm() {
         <fieldset>
           <legend> Seus dados</legend>
 
-          <div className="input-block">
-            <label htmlFor="name">Nome Completo</label>
-            <input type="text" id="name" />
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="avatar">Avatar</label>
-            <input type="text" id="avatar" />
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="whatsapp">Whatsapp</label>
-            <input type="text" id="whatsapp" />
-          </div>
+          <Input name="name" label="Nome completo" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="whatsapp" label="Whatsapp" />
+          <Textarea name="bio" label="Biografia" />
         </fieldset>
+        <fieldset>
+          <legend> Sobre a aula</legend>
+
+          <Select name="subject" label="Matéria"
+          options={[
+            {value: 'Artes', label: 'Artes'},
+            {value: 'Geografia', label: 'Geografia'},
+            {value: 'Matemática', label: 'Matemática'},
+            {value: 'História do Brasil', label: 'História do Brasil'},
+            {value: 'Literatura', label: 'Literatura'}
+          ]} />
+          <Input name="cost" label="Custo da sua aula-hora" />
+        </fieldset>
+        <fieldset>
+          <legend>Horários disponíveis</legend>
+
+          <Input name="weekday" label="Dia da semana" />
+        </fieldset>
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Aviso importante"/>
+            Importante! <br/>
+            Preencha todos os dados
+          </p>
+          <button type="button">Salvar cadastro</button>
+        </footer>
       </main>
     </div>
   );
