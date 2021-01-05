@@ -30,7 +30,9 @@
 }
 
 @media (min-width: 700px) {
-.input-block + .input-block {
+    .input-block + .input-block,
+    .input-block + .select-block,
+    .input-block + .textarea-block  {
         margin-top: 0;
     }
 }
